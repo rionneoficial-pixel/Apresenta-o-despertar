@@ -22,6 +22,7 @@
       <nav class="site-nav" aria-label="Navegação principal">
         <a href="index.html">Início</a>
         <a href="seguro-de-vida.html" aria-current="page">Seguro de vida</a>
+        <a href="#calculadora">Calcule seu risco</a>
         <a href="index.html#servicos">Outros trabalhos</a>
         <a class="nav-cta" href="#contato">Contato</a>
       </nav>
@@ -91,6 +92,103 @@
             <h3>Investimentos</h3>
             <p>Evita que reservas de médio e longo prazo sejam desmontadas para cobrir emergências.</p>
           </article>
+        </div>
+      </section>
+
+      <section id="calculadora" class="calculator-section section">
+        <div class="section-heading">
+          <p class="eyebrow">Calcule seu risco</p>
+          <h2>Uma estimativa rápida para dimensionar sua proteção.</h2>
+          <p>
+            A conta abaixo usa as premissas da consultoria: doenças graves em 24 vezes a renda,
+            seguro de vida e invalidez em 300 vezes as despesas para quem tem filhos ou 150 vezes
+            para quem não tem.
+          </p>
+        </div>
+
+        <div class="calculator-shell">
+          <form class="risk-calculator" data-risk-calculator>
+            <div class="form-field">
+              <label for="risk-name">Nome</label>
+              <input id="risk-name" name="riskName" type="text" autocomplete="name" placeholder="Seu nome">
+            </div>
+
+            <div class="form-field">
+              <label for="income-range">Renda mensal</label>
+              <select id="income-range" name="income" required>
+                <option value="">Selecione uma faixa</option>
+                <option value="3000">Até R$ 3.000</option>
+                <option value="6000">R$ 3.001 a R$ 6.000</option>
+                <option value="10000">R$ 6.001 a R$ 10.000</option>
+                <option value="20000">R$ 10.001 a R$ 20.000</option>
+                <option value="40000">R$ 20.001 a R$ 40.000</option>
+                <option value="60000">Acima de R$ 40.000</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-field">
+                <label for="has-children">Tem filhos?</label>
+                <select id="has-children" name="hasChildren" required>
+                  <option value="">Selecione</option>
+                  <option value="yes">Sim</option>
+                  <option value="no">Não</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="children-count">Quantos filhos?</label>
+                <input id="children-count" name="childrenCount" type="number" min="0" step="1" placeholder="0">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="monthly-expenses">Despesas mensais</label>
+              <input
+                id="monthly-expenses"
+                name="monthlyExpenses"
+                type="number"
+                min="0"
+                step="100"
+                inputmode="numeric"
+                placeholder="Ex.: 8000"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="net-worth">Patrimônio atual</label>
+              <input
+                id="net-worth"
+                name="netWorth"
+                type="number"
+                min="0"
+                step="1000"
+                inputmode="numeric"
+                placeholder="Ex.: 250000"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="work-type">Modelo de trabalho</label>
+              <select id="work-type" name="workType" required>
+                <option value="">Selecione</option>
+                <option value="Autônomo">Autônomo</option>
+                <option value="CLT">CLT</option>
+              </select>
+            </div>
+
+            <button class="button primary full" type="submit">Calcular proteção</button>
+          </form>
+
+          <aside class="calculator-result" data-risk-result aria-live="polite">
+            <p class="eyebrow">Resultado</p>
+            <h3>Preencha os dados para estimar seu risco.</h3>
+            <p>
+              O resultado vai separar a proteção sugerida para doenças graves e para seguro de vida
+              e invalidez.
+            </p>
+          </aside>
         </div>
       </section>
 

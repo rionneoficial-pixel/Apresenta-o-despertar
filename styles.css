@@ -1,16 +1,17 @@
 :root {
-  --green-900: #102a24;
-  --green-800: #183b32;
-  --green-700: #255144;
-  --mint-100: #e8f1eb;
-  --gold-500: #c49a45;
-  --gold-100: #f5ecd8;
-  --ink: #17201d;
-  --muted: #5d6965;
-  --line: #dce4df;
-  --paper: #fbfcfa;
+  --green-900: #001a3d;
+  --green-800: #061f45;
+  --green-700: #12305e;
+  --mint-100: #f1f4f9;
+  --gold-500: #c9a24d;
+  --gold-100: #f4ead2;
+  --ink: #101317;
+  --muted: #5e6570;
+  --line: #d8dee8;
+  --paper: #f7f8fb;
+  --black: #05070a;
   --white: #ffffff;
-  --shadow: 0 24px 70px rgba(16, 42, 36, 0.14);
+  --shadow: 0 24px 70px rgba(0, 26, 61, 0.16);
 }
 
 * {
@@ -62,7 +63,7 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 8px;
-  background: var(--green-900);
+  background: linear-gradient(135deg, var(--green-900), var(--black));
   color: var(--gold-100);
   font-weight: 800;
 }
@@ -130,8 +131,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(16, 42, 36, 0.92) 0%, rgba(16, 42, 36, 0.74) 37%, rgba(16, 42, 36, 0.12) 72%),
-    linear-gradient(0deg, rgba(16, 42, 36, 0.38), rgba(16, 42, 36, 0));
+    linear-gradient(104deg, rgba(0, 26, 61, 0.97) 0%, rgba(0, 26, 61, 0.92) 42%, rgba(0, 26, 61, 0.2) 42.2%, rgba(5, 7, 10, 0.08) 100%),
+    linear-gradient(0deg, rgba(5, 7, 10, 0.38), rgba(5, 7, 10, 0));
 }
 
 .hero-content {
@@ -216,8 +217,8 @@ h3 {
 }
 
 .button.primary {
-  background: var(--gold-500);
-  color: #18130a;
+  background: linear-gradient(135deg, #dfc06d, var(--gold-500));
+  color: #111111;
 }
 
 .button.secondary {
@@ -249,6 +250,33 @@ h3 {
   align-items: center;
 }
 
+.cobrand-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin-top: 34px;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.cobrand-line span {
+  width: 100%;
+  font-size: 0.84rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cobrand-line strong {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 14px;
+  border: 1px solid rgba(201, 162, 77, 0.56);
+  background: rgba(5, 7, 10, 0.28);
+  border-radius: 6px;
+  color: var(--white);
+}
+
 .section-copy p,
 .contact-copy p,
 .compare-band p {
@@ -256,12 +284,95 @@ h3 {
 }
 
 .stats-strip,
-.highlight-panel {
+.highlight-panel,
+.advisor-panel {
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--white);
   box-shadow: var(--shadow);
+}
+
+.advisor-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.advisor-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: 100%;
+  background: linear-gradient(160deg, rgba(201, 162, 77, 0.36), rgba(5, 7, 10, 0));
+  clip-path: polygon(42% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.advisor-photo {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--green-900), var(--black));
+}
+
+.advisor-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.advisor-photo span {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--gold-500);
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.advisor-panel h3,
+.advisor-panel p {
+  position: relative;
+  z-index: 1;
+}
+
+.advisor-panel p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.proof-band {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  padding-top: 0;
+  padding-bottom: 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.proof-band div {
+  min-height: 150px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 28px;
+  background: var(--green-900);
+}
+
+.proof-band strong {
+  color: var(--gold-500);
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.proof-band span {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .stats-strip {
@@ -359,8 +470,14 @@ h3 {
 
 .life-insurance-callout,
 .compare-band {
-  background: var(--green-900);
+  background: linear-gradient(120deg, var(--green-900) 0%, var(--green-900) 58%, var(--black) 58.2%, var(--black) 100%);
   color: var(--white);
+}
+
+.callout-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .life-insurance-callout p,
@@ -386,7 +503,7 @@ h3 {
 .page-hero {
   padding: clamp(76px, 10vw, 128px) clamp(18px, 6vw, 86px);
   background:
-    linear-gradient(90deg, rgba(16, 42, 36, 0.96), rgba(16, 42, 36, 0.88)),
+    linear-gradient(104deg, rgba(0, 26, 61, 0.98) 0%, rgba(0, 26, 61, 0.92) 58%, rgba(5, 7, 10, 0.76) 58.2%, rgba(5, 7, 10, 0.7) 100%),
     url("assets/hero-protecao-financeira.png") center right / cover;
   color: var(--white);
 }
@@ -464,7 +581,7 @@ h3 {
 }
 
 .contact {
-  background: var(--gold-100);
+  background: linear-gradient(135deg, var(--gold-100), #fffaf0);
 }
 
 .contact-links {
@@ -527,6 +644,111 @@ h3 {
   font-size: 0.92rem;
 }
 
+.calculator-section {
+  background: var(--black);
+  color: var(--white);
+}
+
+.calculator-section .section-heading p:not(.eyebrow) {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.calculator-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.75fr);
+  gap: 18px;
+}
+
+.risk-calculator,
+.calculator-result {
+  padding: 28px;
+  border: 1px solid rgba(201, 162, 77, 0.26);
+  border-radius: 8px;
+  background: rgba(0, 26, 61, 0.72);
+}
+
+.risk-calculator {
+  display: grid;
+  gap: 14px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.form-field {
+  display: grid;
+  gap: 8px;
+}
+
+.form-field label {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.form-field input,
+.form-field select {
+  min-height: 46px;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  padding: 0 13px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+  font: inherit;
+}
+
+.calculator-result {
+  align-self: start;
+  position: sticky;
+  top: 96px;
+}
+
+.calculator-result h3 {
+  font-size: clamp(1.5rem, 2.4vw, 2.3rem);
+}
+
+.calculator-result p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.result-list {
+  display: grid;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.result-item {
+  padding: 16px;
+  border: 1px solid rgba(201, 162, 77, 0.22);
+  border-radius: 8px;
+  background: rgba(5, 7, 10, 0.34);
+}
+
+.result-item span,
+.result-item strong {
+  display: block;
+}
+
+.result-item span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.88rem;
+}
+
+.result-item strong {
+  margin-top: 4px;
+  color: var(--gold-500);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+}
+
+.result-note {
+  font-size: 0.9rem;
+}
+
 .site-footer p {
   margin: 0;
 }
@@ -550,8 +772,8 @@ h3 {
 
   .hero-overlay {
     background:
-      linear-gradient(90deg, rgba(16, 42, 36, 0.94), rgba(16, 42, 36, 0.7)),
-      linear-gradient(0deg, rgba(16, 42, 36, 0.48), rgba(16, 42, 36, 0));
+      linear-gradient(90deg, rgba(0, 26, 61, 0.96), rgba(0, 26, 61, 0.72)),
+      linear-gradient(0deg, rgba(5, 7, 10, 0.48), rgba(5, 7, 10, 0));
   }
 
   .intro,
@@ -565,8 +787,14 @@ h3 {
   .service-grid,
   .benefit-grid,
   .quote-grid,
-  .steps {
+  .steps,
+  .proof-band,
+  .calculator-shell {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .calculator-result {
+    position: static;
   }
 }
 
@@ -594,7 +822,10 @@ h3 {
   .service-grid,
   .benefit-grid,
   .quote-grid,
-  .steps {
+  .steps,
+  .proof-band,
+  .calculator-shell,
+  .form-row {
     grid-template-columns: 1fr;
   }
 
