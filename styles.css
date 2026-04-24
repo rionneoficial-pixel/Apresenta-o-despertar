@@ -117,6 +117,7 @@ a {
   display: grid;
   align-items: center;
   overflow: hidden;
+  padding-bottom: 72px;
 }
 
 .hero img {
@@ -250,31 +251,26 @@ h3 {
   align-items: center;
 }
 
-.cobrand-line {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 14px;
-  margin-top: 34px;
-  color: rgba(255, 255, 255, 0.74);
+.hero-brandbar {
+  position: absolute;
+  left: clamp(18px, 5vw, 72px);
+  bottom: clamp(62px, 7vw, 88px);
+  z-index: 1;
+  width: min(100%, 292px);
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 162, 77, 0.18);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 10px 24px rgba(5, 7, 10, 0.12);
 }
 
-.cobrand-line span {
+.hero-brandbar img {
+  display: block;
   width: 100%;
-  font-size: 0.84rem;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.cobrand-line strong {
-  min-height: 38px;
-  display: inline-flex;
-  align-items: center;
-  padding: 0 14px;
-  border: 1px solid rgba(201, 162, 77, 0.56);
-  background: rgba(5, 7, 10, 0.28);
-  border-radius: 6px;
-  color: var(--white);
+  height: auto;
+  opacity: 0.96;
+  filter: drop-shadow(0 8px 18px rgba(5, 7, 10, 0.14));
 }
 
 .section-copy p,
@@ -770,6 +766,10 @@ h3 {
     min-height: 720px;
   }
 
+  .hero-brandbar img {
+    width: 100%;
+  }
+
   .hero-overlay {
     background:
       linear-gradient(90deg, rgba(0, 26, 61, 0.96), rgba(0, 26, 61, 0.72)),
@@ -805,6 +805,7 @@ h3 {
 
   .hero {
     min-height: 680px;
+    padding-bottom: 92px;
   }
 
   .hero-content {
@@ -816,6 +817,12 @@ h3 {
   .button,
   .contact-links a {
     width: 100%;
+  }
+
+  .hero-brandbar {
+    left: 18px;
+    bottom: 56px;
+    width: min(calc(100% - 36px), 236px);
   }
 
   .pillars,
