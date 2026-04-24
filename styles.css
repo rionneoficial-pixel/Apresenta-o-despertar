@@ -254,10 +254,10 @@ h3 {
 .hero-brandbar {
   position: absolute;
   left: clamp(18px, 5vw, 72px);
-  bottom: clamp(62px, 7vw, 88px);
+  bottom: clamp(84px, 9vw, 118px);
   z-index: 1;
-  width: min(100%, 292px);
-  padding: 8px 10px;
+  width: min(100%, 258px);
+  padding: 6px 8px;
   border-radius: 8px;
   border: 1px solid rgba(201, 162, 77, 0.18);
   background: rgba(255, 255, 255, 0.96);
@@ -821,8 +821,8 @@ h3 {
 
   .hero-brandbar {
     left: 18px;
-    bottom: 56px;
-    width: min(calc(100% - 36px), 236px);
+    bottom: 76px;
+    width: min(calc(100% - 36px), 208px);
   }
 
   .pillars,
