@@ -804,13 +804,14 @@ h3 {
   }
 
   .hero {
-    min-height: 680px;
-    padding-bottom: 92px;
+    min-height: auto;
+    padding-bottom: 36px;
   }
 
   .hero-content {
     width: calc(100% - 36px);
     margin: 0 auto;
+    padding: 64px 0 18px;
   }
 
   .hero-actions,
@@ -820,9 +821,11 @@ h3 {
   }
 
   .hero-brandbar {
-    left: 18px;
-    bottom: 76px;
+    position: relative;
+    left: auto;
+    bottom: auto;
     width: min(calc(100% - 36px), 208px);
+    margin: 6px auto 0;
   }
 
   .pillars,
